@@ -1,0 +1,27 @@
+{
+  "team_number": "T0102",
+  "group_lead": {
+    "name": "Kavyansh Saini",
+    "enrollment_no": "2501010216",
+    "github": "kavyanshops"
+  },
+  "members": [
+    {
+      "name": "Ansh Verma",
+      "enrollment_no": "2501010069",
+      "github": "ansh-v10"
+    },
+    {
+      "name": "Aditya Singh",
+      "enrollment_no": "2501010027",
+      "github": "opg857609-bot"
+    },
+    {
+      "name": "Rajat Soni",
+      "enrollment_no": "2501010367",
+      "github": "rajatsoni367"
+    }
+  ],
+  "postgres_version": "PostgreSQL 16",
+  "laptop_used_for_benchmarks": "MacBook"
+}
