@@ -23,12 +23,12 @@
 
 | Role | Name | Enrollment No. | GitHub Username |
 |------|------|----------------|-----------------|
-| Group Lead | | | |
-| Member 2 | | | |
-| Member 3 | | | |
-| Member 4 | | | |
+| Group Lead | Kavyansh Saini | 2501010216 | kavyanshops
+| Member 2 | Ansh Verma |2501010069 | ansh-v10|
+| Member 3 | Aditya Singh | 2501010027 | opg857609-bot|
+| Member 4 | Rajat Soni| 2501010367 | rajatsoni367|
 
-**Team No.:** ____ · **Section:** ____ · **Repository URL:** ____
+**Team No.:** T0102 · **Section:** B · **Repository URL:** https://github.com/kavyanshops/persistent-world-engine-AP_Repo.git
 
 ---
 
