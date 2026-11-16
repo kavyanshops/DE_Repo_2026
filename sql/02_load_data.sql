@@ -18,7 +18,8 @@ ANALYZE;
 -- restaurants 2500, menu_items 50000, delivery_partners 2000,
 -- coupons 30, orders 150000, order_items 375000, payments 137378,
 -- reviews 39186.
-SELECT 'cities' AS table_name, count(*) AS row_count FROM cities
+
+SELECT 'cities' AS table_name, count(*) AS row_count FROM cities 
 UNION ALL SELECT 'localities', count(*) FROM localities
 UNION ALL SELECT 'customers', count(*) FROM customers
 UNION ALL SELECT 'restaurants', count(*) FROM restaurants
@@ -34,6 +35,7 @@ ORDER BY table_name;
 -- The first three integrity checks should return zero. The payment check
 -- intentionally exposes the known seed-data anomaly instead of hiding it
 -- with a constraint.
+
 SELECT count(*) AS order_items_from_other_restaurant
 FROM order_items oi
 JOIN orders o ON o.order_id = oi.order_id
@@ -52,7 +54,9 @@ WHERE total_amount <> item_total + delivery_fee - discount;
 SELECT count(*) AS delivered_orders_without_successful_payment
 FROM orders o
 WHERE o.status = 'DELIVERED'
+
   AND NOT EXISTS (
-      SELECT 1 FROM payments p
+      SELECT 1 
+      FROM payments p
       WHERE p.order_id = o.order_id AND p.payment_status = 'SUCCESS'
   );
