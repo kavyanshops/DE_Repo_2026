@@ -1,0 +1,42 @@
+=== R13 run 1 ===
+Seq Scan on delivery_partners p  (cost=4166.74..4224.74 rows=141 width=27) (actual time=7.222..7.223 rows=0.00 loops=1)
+  Filter: ((NOT (ANY (partner_id = (hashed SubPlan 1).col1))) AND (city_id = 1) AND (status = 'ACTIVE'::text))
+  Rows Removed by Filter: 2000
+  Buffers: shared hit=2311
+  SubPlan 1
+    ->  Seq Scan on orders o  (cost=0.00..4163.00 rows=1498 width=4) (actual time=6.790..6.901 rows=1648.00 loops=1)
+          Filter: (placed_at >= '2026-06-25 00:00:00+05:30'::timestamp with time zone)
+          Rows Removed by Filter: 148352
+          Buffers: shared hit=2288
+Planning:
+  Buffers: shared hit=128
+Planning Time: 0.314 ms
+Execution Time: 7.253 ms
+=== R13 run 2 ===
+Seq Scan on delivery_partners p  (cost=4166.74..4224.74 rows=141 width=27) (actual time=6.667..6.668 rows=0.00 loops=1)
+  Filter: ((NOT (ANY (partner_id = (hashed SubPlan 1).col1))) AND (city_id = 1) AND (status = 'ACTIVE'::text))
+  Rows Removed by Filter: 2000
+  Buffers: shared hit=2311
+  SubPlan 1
+    ->  Seq Scan on orders o  (cost=0.00..4163.00 rows=1498 width=4) (actual time=6.265..6.358 rows=1648.00 loops=1)
+          Filter: (placed_at >= '2026-06-25 00:00:00+05:30'::timestamp with time zone)
+          Rows Removed by Filter: 148352
+          Buffers: shared hit=2288
+Planning:
+  Buffers: shared hit=128
+Planning Time: 0.339 ms
+Execution Time: 6.697 ms
+=== R13 run 3 ===
+Seq Scan on delivery_partners p  (cost=4166.74..4224.74 rows=141 width=27) (actual time=6.561..6.561 rows=0.00 loops=1)
+  Filter: ((NOT (ANY (partner_id = (hashed SubPlan 1).col1))) AND (city_id = 1) AND (status = 'ACTIVE'::text))
+  Rows Removed by Filter: 2000
+  Buffers: shared hit=2311
+  SubPlan 1
+    ->  Seq Scan on orders o  (cost=0.00..4163.00 rows=1498 width=4) (actual time=6.176..6.269 rows=1648.00 loops=1)
+          Filter: (placed_at >= '2026-06-25 00:00:00+05:30'::timestamp with time zone)
+          Rows Removed by Filter: 148352
+          Buffers: shared hit=2288
+Planning:
+  Buffers: shared hit=128
+Planning Time: 0.340 ms
+Execution Time: 6.597 ms

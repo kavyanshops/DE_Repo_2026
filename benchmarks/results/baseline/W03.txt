@@ -1,0 +1,33 @@
+=== W03 run 1 ===
+Update on menu_items  (cost=0.00..1206.00 rows=0 width=0) (actual time=1.939..1.939 rows=0.00 loops=1)
+  Buffers: shared hit=496
+  ->  Seq Scan on menu_items  (cost=0.00..1206.00 rows=3 width=7) (actual time=0.199..1.746 rows=2.00 loops=1)
+        Filter: ((restaurant_id = 217) AND (category = 'Desserts'::text))
+        Rows Removed by Filter: 49998
+        Buffers: shared hit=456
+Planning:
+  Buffers: shared hit=74
+Planning Time: 0.212 ms
+Execution Time: 2.003 ms
+=== W03 run 2 ===
+Update on menu_items  (cost=0.00..1206.00 rows=0 width=0) (actual time=1.608..1.608 rows=0.00 loops=1)
+  Buffers: shared hit=496
+  ->  Seq Scan on menu_items  (cost=0.00..1206.00 rows=3 width=7) (actual time=0.133..1.480 rows=2.00 loops=1)
+        Filter: ((restaurant_id = 217) AND (category = 'Desserts'::text))
+        Rows Removed by Filter: 49998
+        Buffers: shared hit=456
+Planning:
+  Buffers: shared hit=74
+Planning Time: 0.159 ms
+Execution Time: 1.654 ms
+=== W03 run 3 ===
+Update on menu_items  (cost=0.00..1206.00 rows=0 width=0) (actual time=1.895..1.896 rows=0.00 loops=1)
+  Buffers: shared hit=496
+  ->  Seq Scan on menu_items  (cost=0.00..1206.00 rows=3 width=7) (actual time=0.135..1.767 rows=2.00 loops=1)
+        Filter: ((restaurant_id = 217) AND (category = 'Desserts'::text))
+        Rows Removed by Filter: 49998
+        Buffers: shared hit=456
+Planning:
+  Buffers: shared hit=74
+Planning Time: 0.179 ms
+Execution Time: 1.946 ms

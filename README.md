@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Zomato Food Delivery Database: DBMS Project
 
 **Course:** Database Management Systems · **Year:** B.Tech 2nd year · **Team size:** 4

@@ -1,0 +1,75 @@
+=== R15 run 1 ===
+Sort  (cost=5817.76..5817.83 rows=30 width=86) (actual time=15.931..15.933 rows=30.00 loops=1)
+  Sort Key: (count(o.order_id)) DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=2292
+  ->  HashAggregate  (cost=5816.50..5817.02 rows=30 width=86) (actual time=15.915..15.923 rows=30.00 loops=1)
+        Group Key: c.coupon_code
+        Batches: 1  Memory Usage: 56kB
+        Buffers: shared hit=2289
+        ->  Hash Right Join  (cost=1.68..4513.30 rows=130320 width=26) (actual time=0.018..14.134 rows=17623.00 loops=1)
+              Hash Cond: (o.coupon_code = c.coupon_code)
+              Buffers: shared hit=2289
+              ->  Seq Scan on orders o  (cost=0.00..4163.00 rows=130320 width=21) (actual time=0.004..10.397 rows=130413.00 loops=1)
+                    Filter: (status = 'DELIVERED'::text)
+                    Rows Removed by Filter: 19587
+                    Buffers: shared hit=2288
+              ->  Hash  (cost=1.30..1.30 rows=30 width=14) (actual time=0.008..0.008 rows=30.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 10kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on coupons c  (cost=0.00..1.30 rows=30 width=14) (actual time=0.002..0.003 rows=30.00 loops=1)
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=186
+Planning Time: 0.335 ms
+Execution Time: 15.974 ms
+=== R15 run 2 ===
+Sort  (cost=5817.76..5817.83 rows=30 width=86) (actual time=15.475..15.477 rows=30.00 loops=1)
+  Sort Key: (count(o.order_id)) DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=2292
+  ->  HashAggregate  (cost=5816.50..5817.02 rows=30 width=86) (actual time=15.457..15.465 rows=30.00 loops=1)
+        Group Key: c.coupon_code
+        Batches: 1  Memory Usage: 56kB
+        Buffers: shared hit=2289
+        ->  Hash Right Join  (cost=1.68..4513.30 rows=130320 width=26) (actual time=0.024..13.723 rows=17623.00 loops=1)
+              Hash Cond: (o.coupon_code = c.coupon_code)
+              Buffers: shared hit=2289
+              ->  Seq Scan on orders o  (cost=0.00..4163.00 rows=130320 width=21) (actual time=0.005..10.002 rows=130413.00 loops=1)
+                    Filter: (status = 'DELIVERED'::text)
+                    Rows Removed by Filter: 19587
+                    Buffers: shared hit=2288
+              ->  Hash  (cost=1.30..1.30 rows=30 width=14) (actual time=0.012..0.012 rows=30.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 10kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on coupons c  (cost=0.00..1.30 rows=30 width=14) (actual time=0.005..0.006 rows=30.00 loops=1)
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=186
+Planning Time: 0.512 ms
+Execution Time: 15.532 ms
+=== R15 run 3 ===
+Sort  (cost=5817.76..5817.83 rows=30 width=86) (actual time=15.559..15.561 rows=30.00 loops=1)
+  Sort Key: (count(o.order_id)) DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=2292
+  ->  HashAggregate  (cost=5816.50..5817.02 rows=30 width=86) (actual time=15.539..15.549 rows=30.00 loops=1)
+        Group Key: c.coupon_code
+        Batches: 1  Memory Usage: 56kB
+        Buffers: shared hit=2289
+        ->  Hash Right Join  (cost=1.68..4513.30 rows=130320 width=26) (actual time=0.018..13.796 rows=17623.00 loops=1)
+              Hash Cond: (o.coupon_code = c.coupon_code)
+              Buffers: shared hit=2289
+              ->  Seq Scan on orders o  (cost=0.00..4163.00 rows=130320 width=21) (actual time=0.004..10.083 rows=130413.00 loops=1)
+                    Filter: (status = 'DELIVERED'::text)
+                    Rows Removed by Filter: 19587
+                    Buffers: shared hit=2288
+              ->  Hash  (cost=1.30..1.30 rows=30 width=14) (actual time=0.008..0.008 rows=30.00 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 10kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on coupons c  (cost=0.00..1.30 rows=30 width=14) (actual time=0.002..0.003 rows=30.00 loops=1)
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=186
+Planning Time: 0.317 ms
+Execution Time: 15.599 ms

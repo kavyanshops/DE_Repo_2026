@@ -1,0 +1,57 @@
+=== R14 run 1 ===
+Hash Right Semi Join  (cost=734.33..5318.42 rows=60 width=20) (actual time=7.825..8.526 rows=379.00 loops=1)
+  Hash Cond: (o.customer_id = c.customer_id)
+  Buffers: shared hit=2661
+  ->  Seq Scan on orders o  (cost=0.00..4538.00 rows=8032 width=4) (actual time=5.978..6.416 rows=8241.00 loops=1)
+        Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Rows Removed by Filter: 141759
+        Buffers: shared hit=2288
+  ->  Hash  (cost=731.65..731.65 rows=214 width=20) (actual time=1.832..1.832 rows=1230.00 loops=1)
+        Buckets: 2048 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 81kB
+        Buffers: shared hit=373
+        ->  Seq Scan on customers c  (cost=0.00..731.65 rows=214 width=20) (actual time=0.011..1.739 rows=1230.00 loops=1)
+              Filter: (is_gold_member AND (gold_expires_on < '2026-07-01'::date))
+              Rows Removed by Filter: 23770
+              Buffers: shared hit=373
+Planning:
+  Buffers: shared hit=273
+Planning Time: 0.590 ms
+Execution Time: 8.564 ms
+=== R14 run 2 ===
+Hash Right Semi Join  (cost=734.33..5318.42 rows=60 width=20) (actual time=7.346..8.068 rows=379.00 loops=1)
+  Hash Cond: (o.customer_id = c.customer_id)
+  Buffers: shared hit=2661
+  ->  Seq Scan on orders o  (cost=0.00..4538.00 rows=8032 width=4) (actual time=6.150..6.588 rows=8241.00 loops=1)
+        Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Rows Removed by Filter: 141759
+        Buffers: shared hit=2288
+  ->  Hash  (cost=731.65..731.65 rows=214 width=20) (actual time=1.184..1.184 rows=1230.00 loops=1)
+        Buckets: 2048 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 81kB
+        Buffers: shared hit=373
+        ->  Seq Scan on customers c  (cost=0.00..731.65 rows=214 width=20) (actual time=0.006..1.093 rows=1230.00 loops=1)
+              Filter: (is_gold_member AND (gold_expires_on < '2026-07-01'::date))
+              Rows Removed by Filter: 23770
+              Buffers: shared hit=373
+Planning:
+  Buffers: shared hit=273
+Planning Time: 0.577 ms
+Execution Time: 8.119 ms
+=== R14 run 3 ===
+Hash Right Semi Join  (cost=734.33..5318.42 rows=60 width=20) (actual time=7.553..8.222 rows=379.00 loops=1)
+  Hash Cond: (o.customer_id = c.customer_id)
+  Buffers: shared hit=2661
+  ->  Seq Scan on orders o  (cost=0.00..4538.00 rows=8032 width=4) (actual time=6.395..6.798 rows=8241.00 loops=1)
+        Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Rows Removed by Filter: 141759
+        Buffers: shared hit=2288
+  ->  Hash  (cost=731.65..731.65 rows=214 width=20) (actual time=1.144..1.144 rows=1230.00 loops=1)
+        Buckets: 2048 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 81kB
+        Buffers: shared hit=373
+        ->  Seq Scan on customers c  (cost=0.00..731.65 rows=214 width=20) (actual time=0.011..1.058 rows=1230.00 loops=1)
+              Filter: (is_gold_member AND (gold_expires_on < '2026-07-01'::date))
+              Rows Removed by Filter: 23770
+              Buffers: shared hit=373
+Planning:
+  Buffers: shared hit=273
+Planning Time: 0.441 ms
+Execution Time: 8.254 ms
