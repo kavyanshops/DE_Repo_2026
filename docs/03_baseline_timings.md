@@ -4,6 +4,45 @@ Database: PostgreSQL 18.6 · Dataset: 150,000 orders (seed data) · Date: 17 Nov
 
 Each query was executed 3 times using `EXPLAIN (ANALYZE, BUFFERS)` via `./benchmarks/run_benchmark.sh zomato baseline`. Write queries (`W01`–`W05`) were executed inside `BEGIN ... ROLLBACK;` transactions so that database state remained unchanged across runs. The execution times below reflect the PostgreSQL engine execution times in milliseconds recorded directly in `benchmarks/results/baseline/`.
 
+## Read Queries (R01–R10) Execution Times and Averages
+
+| Query ID | Run 1 | Run 2 | Run 3 | Average Time |
+|---|---:|---:|---:|---:|
+| R01 | 0.631 | 0.437 | 0.426 | 0.498 |
+| R02 | 20.723 | 18.654 | 15.906 | 18.428 |
+| R03 | 2.087 | 1.690 | 2.052 | 1.943 |
+| R04 | 6.392 | 4.895 | 4.812 | 5.366 |
+| R05 | 8.349 | 6.933 | 7.263 | 7.515 |
+| R06 | 4.802 | 4.646 | 5.133 | 4.860 |
+| R07 | 7.210 | 6.550 | 6.509 | 6.756 |
+| R08 | 7.500 | 7.626 | 7.513 | 7.546 |
+| R09 | 25.360 | 24.482 | 24.958 | 24.933 |
+| R10 | 5.046 | 5.703 | 6.253 | 5.667 |
+
+*(Execution times in milliseconds)*
+
+## Read Queries (R11–R25) Execution Times and Averages
+
+| Query ID | Run 1 | Run 2 | Run 3 | Average Time |
+|---|---:|---:|---:|---:|
+| R11 | 5.906 | 6.670 | 6.811 | 6.462 |
+| R12 | 8.435 | 8.589 | 8.838 | 8.621 |
+| R13 | 7.253 | 6.697 | 6.597 | 6.849 |
+| R14 | 8.564 | 8.119 | 8.254 | 8.312 |
+| R15 | 15.974 | 15.532 | 15.599 | 15.702 |
+| R16 | 5.633 | 4.137 | 4.189 | 4.653 |
+| R17 | 17.755 | 16.937 | 16.862 | 17.185 |
+| R18 | 13.415 | 13.260 | 13.204 | 13.293 |
+| R19 | 4900.660 | 5260.847 | 5642.061 | 5267.856 |
+| R20 | 21.596 | 21.150 | 37.796 | 26.847 |
+| R21 | 12.218 | 11.597 | 11.487 | 11.767 |
+| R22 | 17.595 | 15.832 | 14.842 | 16.090 |
+| R23 | 39.440 | 39.189 | 38.163 | 38.931 |
+| R24 | 6.261 | 5.635 | 5.023 | 5.640 |
+| R25 | 0.314 | 0.354 | 0.305 | 0.324 |
+
+*(Execution times in milliseconds)*
+
 ## Timing Table
 
 | SQL Query | Type | Run 1 (ms) | Run 2 (ms) | Run 3 (ms) | Average (ms) |
