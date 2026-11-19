@@ -1,0 +1,93 @@
+=== R21 run 1 ===
+Sort  (cost=1399.80..1399.82 rows=10 width=52) (actual time=4.470..4.470 rows=10.00 loops=1)
+  Sort Key: c.city_id
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=484
+  ->  HashAggregate  (cost=1399.41..1399.63 rows=10 width=52) (actual time=4.458..4.460 rows=10.00 loops=1)
+        Group Key: c.city_id
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared hit=481
+        ->  Hash Join  (cost=685.27..1325.91 rows=7350 width=12) (actual time=1.982..4.039 rows=7210.00 loops=1)
+              Hash Cond: (c.customer_id = may.customer_id)
+              Buffers: shared hit=481
+              ->  Seq Scan on customers c  (cost=0.00..575.00 rows=25000 width=8) (actual time=0.003..0.670 rows=25000.00 loops=1)
+                    Buffers: shared hit=325
+              ->  Hash  (cost=593.40..593.40 rows=7350 width=12) (actual time=1.972..1.973 rows=7210.00 loops=1)
+                    Buckets: 8192  Batches: 1  Memory Usage: 374kB
+                    Buffers: shared hit=156
+                    ->  Subquery Scan on may  (cost=446.40..593.40 rows=7350 width=12) (actual time=1.145..1.702 rows=7210.00 loops=1)
+                          Buffers: shared hit=156
+                          ->  HashAggregate  (cost=446.40..519.90 rows=7350 width=12) (actual time=1.144..1.445 rows=7210.00 loops=1)
+                                Group Key: orders.customer_id
+                                Batches: 1  Memory Usage: 793kB
+                                Buffers: shared hit=156
+                                ->  Index Scan using idx_orders_placed_at_desc on orders  (cost=0.42..403.40 rows=8599 width=4) (actual time=0.009..0.451 rows=8517.00 loops=1)
+                                      Index Cond: ((placed_at >= '2026-05-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-06-01 00:00:00+05:30'::timestamp with time zone))
+                                      Index Searches: 1
+                                      Buffers: shared hit=156
+Planning:
+  Buffers: shared hit=416
+Planning Time: 0.619 ms
+Execution Time: 4.519 ms
+=== R21 run 2 ===
+Sort  (cost=1399.80..1399.82 rows=10 width=52) (actual time=4.443..4.444 rows=10.00 loops=1)
+  Sort Key: c.city_id
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=484
+  ->  HashAggregate  (cost=1399.41..1399.63 rows=10 width=52) (actual time=4.433..4.435 rows=10.00 loops=1)
+        Group Key: c.city_id
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared hit=481
+        ->  Hash Join  (cost=685.27..1325.91 rows=7350 width=12) (actual time=1.966..4.015 rows=7210.00 loops=1)
+              Hash Cond: (c.customer_id = may.customer_id)
+              Buffers: shared hit=481
+              ->  Seq Scan on customers c  (cost=0.00..575.00 rows=25000 width=8) (actual time=0.004..0.674 rows=25000.00 loops=1)
+                    Buffers: shared hit=325
+              ->  Hash  (cost=593.40..593.40 rows=7350 width=12) (actual time=1.954..1.955 rows=7210.00 loops=1)
+                    Buckets: 8192  Batches: 1  Memory Usage: 374kB
+                    Buffers: shared hit=156
+                    ->  Subquery Scan on may  (cost=446.40..593.40 rows=7350 width=12) (actual time=1.146..1.690 rows=7210.00 loops=1)
+                          Buffers: shared hit=156
+                          ->  HashAggregate  (cost=446.40..519.90 rows=7350 width=12) (actual time=1.146..1.436 rows=7210.00 loops=1)
+                                Group Key: orders.customer_id
+                                Batches: 1  Memory Usage: 793kB
+                                Buffers: shared hit=156
+                                ->  Index Scan using idx_orders_placed_at_desc on orders  (cost=0.42..403.40 rows=8599 width=4) (actual time=0.009..0.453 rows=8517.00 loops=1)
+                                      Index Cond: ((placed_at >= '2026-05-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-06-01 00:00:00+05:30'::timestamp with time zone))
+                                      Index Searches: 1
+                                      Buffers: shared hit=156
+Planning:
+  Buffers: shared hit=416
+Planning Time: 0.649 ms
+Execution Time: 4.488 ms
+=== R21 run 3 ===
+Sort  (cost=1399.80..1399.82 rows=10 width=52) (actual time=4.477..4.478 rows=10.00 loops=1)
+  Sort Key: c.city_id
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=484
+  ->  HashAggregate  (cost=1399.41..1399.63 rows=10 width=52) (actual time=4.468..4.470 rows=10.00 loops=1)
+        Group Key: c.city_id
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared hit=481
+        ->  Hash Join  (cost=685.27..1325.91 rows=7350 width=12) (actual time=1.998..4.059 rows=7210.00 loops=1)
+              Hash Cond: (c.customer_id = may.customer_id)
+              Buffers: shared hit=481
+              ->  Seq Scan on customers c  (cost=0.00..575.00 rows=25000 width=8) (actual time=0.003..0.655 rows=25000.00 loops=1)
+                    Buffers: shared hit=325
+              ->  Hash  (cost=593.40..593.40 rows=7350 width=12) (actual time=1.987..1.988 rows=7210.00 loops=1)
+                    Buckets: 8192  Batches: 1  Memory Usage: 374kB
+                    Buffers: shared hit=156
+                    ->  Subquery Scan on may  (cost=446.40..593.40 rows=7350 width=12) (actual time=1.169..1.717 rows=7210.00 loops=1)
+                          Buffers: shared hit=156
+                          ->  HashAggregate  (cost=446.40..519.90 rows=7350 width=12) (actual time=1.169..1.456 rows=7210.00 loops=1)
+                                Group Key: orders.customer_id
+                                Batches: 1  Memory Usage: 793kB
+                                Buffers: shared hit=156
+                                ->  Index Scan using idx_orders_placed_at_desc on orders  (cost=0.42..403.40 rows=8599 width=4) (actual time=0.009..0.450 rows=8517.00 loops=1)
+                                      Index Cond: ((placed_at >= '2026-05-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-06-01 00:00:00+05:30'::timestamp with time zone))
+                                      Index Searches: 1
+                                      Buffers: shared hit=156
+Planning:
+  Buffers: shared hit=416
+Planning Time: 0.606 ms
+Execution Time: 4.520 ms

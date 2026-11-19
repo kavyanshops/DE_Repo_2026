@@ -1,0 +1,75 @@
+=== R04 run 1 ===
+Limit  (cost=85.59..85.60 rows=7 width=43) (actual time=0.176..0.178 rows=9.00 loops=1)
+  Buffers: shared hit=45
+  ->  Sort  (cost=85.59..85.60 rows=7 width=43) (actual time=0.175..0.176 rows=9.00 loops=1)
+        Sort Key: o.placed_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=45
+        ->  Nested Loop  (cost=4.75..85.49 rows=7 width=43) (actual time=0.040..0.151 rows=9.00 loops=1)
+              Buffers: shared hit=42
+              ->  Bitmap Heap Scan on orders o  (cost=4.47..31.40 rows=7 width=32) (actual time=0.024..0.072 rows=9.00 loops=1)
+                    Recheck Cond: (customer_id = 1042)
+                    Heap Blocks: exact=12
+                    Buffers: shared hit=15
+                    ->  Bitmap Index Scan on idx_orders_customer_placed_at  (cost=0.00..4.47 rows=7 width=0) (actual time=0.013..0.013 rows=12.00 loops=1)
+                          Index Cond: (customer_id = 1042)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+              ->  Index Scan using restaurants_pkey on restaurants r  (cost=0.28..7.73 rows=1 width=19) (actual time=0.008..0.008 rows=1.00 loops=9)
+                    Index Cond: (restaurant_id = o.restaurant_id)
+                    Index Searches: 9
+                    Buffers: shared hit=27
+Planning:
+  Buffers: shared hit=494
+Planning Time: 2.135 ms
+Execution Time: 0.221 ms
+=== R04 run 2 ===
+Limit  (cost=85.59..85.60 rows=7 width=43) (actual time=0.290..0.292 rows=9.00 loops=1)
+  Buffers: shared hit=45
+  ->  Sort  (cost=85.59..85.60 rows=7 width=43) (actual time=0.289..0.290 rows=9.00 loops=1)
+        Sort Key: o.placed_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=45
+        ->  Nested Loop  (cost=4.75..85.49 rows=7 width=43) (actual time=0.037..0.145 rows=9.00 loops=1)
+              Buffers: shared hit=42
+              ->  Bitmap Heap Scan on orders o  (cost=4.47..31.40 rows=7 width=32) (actual time=0.025..0.080 rows=9.00 loops=1)
+                    Recheck Cond: (customer_id = 1042)
+                    Heap Blocks: exact=12
+                    Buffers: shared hit=15
+                    ->  Bitmap Index Scan on idx_orders_customer_placed_at  (cost=0.00..4.47 rows=7 width=0) (actual time=0.011..0.012 rows=12.00 loops=1)
+                          Index Cond: (customer_id = 1042)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+              ->  Index Scan using restaurants_pkey on restaurants r  (cost=0.28..7.73 rows=1 width=19) (actual time=0.006..0.006 rows=1.00 loops=9)
+                    Index Cond: (restaurant_id = o.restaurant_id)
+                    Index Searches: 9
+                    Buffers: shared hit=27
+Planning:
+  Buffers: shared hit=490
+Planning Time: 1.896 ms
+Execution Time: 0.332 ms
+=== R04 run 3 ===
+Limit  (cost=85.59..85.60 rows=7 width=43) (actual time=0.157..0.158 rows=9.00 loops=1)
+  Buffers: shared hit=45
+  ->  Sort  (cost=85.59..85.60 rows=7 width=43) (actual time=0.156..0.157 rows=9.00 loops=1)
+        Sort Key: o.placed_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=45
+        ->  Nested Loop  (cost=4.75..85.49 rows=7 width=43) (actual time=0.030..0.129 rows=9.00 loops=1)
+              Buffers: shared hit=42
+              ->  Bitmap Heap Scan on orders o  (cost=4.47..31.40 rows=7 width=32) (actual time=0.021..0.062 rows=9.00 loops=1)
+                    Recheck Cond: (customer_id = 1042)
+                    Heap Blocks: exact=12
+                    Buffers: shared hit=15
+                    ->  Bitmap Index Scan on idx_orders_customer_placed_at  (cost=0.00..4.47 rows=7 width=0) (actual time=0.011..0.011 rows=12.00 loops=1)
+                          Index Cond: (customer_id = 1042)
+                          Index Searches: 1
+                          Buffers: shared hit=3
+              ->  Index Scan using restaurants_pkey on restaurants r  (cost=0.28..7.73 rows=1 width=19) (actual time=0.007..0.007 rows=1.00 loops=9)
+                    Index Cond: (restaurant_id = o.restaurant_id)
+                    Index Searches: 9
+                    Buffers: shared hit=27
+Planning:
+  Buffers: shared hit=490
+Planning Time: 1.800 ms
+Execution Time: 0.202 ms

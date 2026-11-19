@@ -1,0 +1,33 @@
+=== R10 run 1 ===
+Limit  (cost=0.42..310.22 rows=100 width=44) (actual time=0.028..0.121 rows=100.00 loops=1)
+  Buffers: shared hit=115
+  ->  Index Scan using idx_orders_delivery_duration on orders  (cost=0.42..8547.86 rows=2759 width=44) (actual time=0.028..0.117 rows=100.00 loops=1)
+        Index Cond: (((delivered_at - placed_at) > '01:00:00'::interval) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Index Searches: 1
+        Buffers: shared hit=115
+Planning:
+  Buffers: shared hit=324
+Planning Time: 0.507 ms
+Execution Time: 0.135 ms
+=== R10 run 2 ===
+Limit  (cost=0.42..310.22 rows=100 width=44) (actual time=0.019..0.099 rows=100.00 loops=1)
+  Buffers: shared hit=115
+  ->  Index Scan using idx_orders_delivery_duration on orders  (cost=0.42..8547.86 rows=2759 width=44) (actual time=0.019..0.095 rows=100.00 loops=1)
+        Index Cond: (((delivered_at - placed_at) > '01:00:00'::interval) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Index Searches: 1
+        Buffers: shared hit=115
+Planning:
+  Buffers: shared hit=322
+Planning Time: 0.473 ms
+Execution Time: 0.111 ms
+=== R10 run 3 ===
+Limit  (cost=0.42..310.22 rows=100 width=44) (actual time=0.019..0.102 rows=100.00 loops=1)
+  Buffers: shared hit=115
+  ->  Index Scan using idx_orders_delivery_duration on orders  (cost=0.42..8547.86 rows=2759 width=44) (actual time=0.019..0.099 rows=100.00 loops=1)
+        Index Cond: (((delivered_at - placed_at) > '01:00:00'::interval) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Index Searches: 1
+        Buffers: shared hit=115
+Planning:
+  Buffers: shared hit=322
+Planning Time: 0.481 ms
+Execution Time: 0.115 ms
