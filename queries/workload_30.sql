@@ -1,4 +1,3 @@
-now push the changes and create a pr with relevant commit
 -- =====================================================================
 -- Zomato DBMS Project: the 30 queries you must benchmark
 --   R01–R25 : read queries  (25)
