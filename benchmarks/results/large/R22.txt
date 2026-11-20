@@ -1,0 +1,11 @@
+=== R22 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 31.200 ms
+
+=== R22 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 33.800 ms
+
+=== R22 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 37.600 ms

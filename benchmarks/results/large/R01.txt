@@ -1,0 +1,11 @@
+=== R01 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 0.420 ms
+
+=== R01 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 0.470 ms
+
+=== R01 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 0.565 ms

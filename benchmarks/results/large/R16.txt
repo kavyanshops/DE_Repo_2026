@@ -1,0 +1,11 @@
+=== R16 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 1.110 ms
+
+=== R16 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 1.250 ms
+
+=== R16 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 1.480 ms

@@ -1,0 +1,11 @@
+=== R06 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 0.081 ms
+
+=== R06 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 0.092 ms
+
+=== R06 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 0.112 ms

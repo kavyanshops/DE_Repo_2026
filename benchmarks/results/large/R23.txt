@@ -1,0 +1,11 @@
+=== R23 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 118.200 ms
+
+=== R23 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 124.800 ms
+
+=== R23 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 133.200 ms

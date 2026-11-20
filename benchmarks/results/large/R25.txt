@@ -1,0 +1,11 @@
+=== R25 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 2.150 ms
+
+=== R25 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 2.410 ms
+
+=== R25 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 2.790 ms

@@ -1,0 +1,11 @@
+=== R02 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 44.110 ms
+
+=== R02 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 47.950 ms
+
+=== R02 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 52.570 ms

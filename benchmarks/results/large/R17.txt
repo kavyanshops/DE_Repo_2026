@@ -1,0 +1,11 @@
+=== R17 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 229.400 ms
+
+=== R17 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 245.100 ms
+
+=== R17 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 271.300 ms

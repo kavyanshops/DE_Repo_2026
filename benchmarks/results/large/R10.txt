@@ -1,0 +1,11 @@
+=== R10 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 0.125 ms
+
+=== R10 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 0.140 ms
+
+=== R10 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 0.170 ms

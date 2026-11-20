@@ -1,0 +1,11 @@
+=== R18 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 33.100 ms
+
+=== R18 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 36.200 ms
+
+=== R18 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 40.950 ms

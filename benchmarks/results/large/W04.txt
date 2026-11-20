@@ -1,0 +1,11 @@
+=== W04 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 335.200 ms
+
+=== W04 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 360.500 ms
+
+=== W04 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 399.900 ms

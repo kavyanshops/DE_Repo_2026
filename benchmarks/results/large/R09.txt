@@ -1,0 +1,11 @@
+=== R09 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 432.500 ms
+
+=== R09 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 461.200 ms
+
+=== R09 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 503.700 ms

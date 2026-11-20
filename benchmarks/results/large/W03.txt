@@ -1,0 +1,11 @@
+=== W03 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 0.570 ms
+
+=== W03 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 0.630 ms
+
+=== W03 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 0.720 ms

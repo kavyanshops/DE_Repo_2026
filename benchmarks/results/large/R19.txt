@@ -1,0 +1,11 @@
+=== R19 run 1 ===
+Planning Time: 0.280 ms
+Execution Time: 194.200 ms
+
+=== R19 run 2 ===
+Planning Time: 0.195 ms
+Execution Time: 208.500 ms
+
+=== R19 run 3 ===
+Planning Time: 0.188 ms
+Execution Time: 228.500 ms
