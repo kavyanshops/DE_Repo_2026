@@ -1,0 +1,33 @@
+=== W03 run 1 ===
+Update on menu_items  (cost=0.41..20.81 rows=0 width=0) (actual time=0.318..0.318 rows=0.00 loops=1)
+  Buffers: shared hit=58
+  ->  Index Scan using idx_menu_items_restaurant_available on menu_items  (cost=0.41..20.81 rows=3 width=7) (actual time=0.050..0.051 rows=2.00 loops=1)
+        Index Cond: ((restaurant_id = 217) AND (category = 'Desserts'::text))
+        Index Searches: 1
+        Buffers: shared hit=13
+Planning:
+  Buffers: shared hit=141
+Planning Time: 0.824 ms
+Execution Time: 0.439 ms
+=== W03 run 2 ===
+Update on menu_items  (cost=0.41..20.81 rows=0 width=0) (actual time=0.405..0.405 rows=0.00 loops=1)
+  Buffers: shared hit=63
+  ->  Index Scan using idx_menu_items_restaurant_available on menu_items  (cost=0.41..20.81 rows=3 width=7) (actual time=0.080..0.081 rows=2.00 loops=1)
+        Index Cond: ((restaurant_id = 217) AND (category = 'Desserts'::text))
+        Index Searches: 1
+        Buffers: shared hit=17
+Planning:
+  Buffers: shared hit=141
+Planning Time: 0.718 ms
+Execution Time: 0.534 ms
+=== W03 run 3 ===
+Update on menu_items  (cost=0.41..20.81 rows=0 width=0) (actual time=0.417..0.417 rows=0.00 loops=1)
+  Buffers: shared hit=65
+  ->  Index Scan using idx_menu_items_restaurant_available on menu_items  (cost=0.41..20.81 rows=3 width=7) (actual time=0.079..0.085 rows=2.00 loops=1)
+        Index Cond: ((restaurant_id = 217) AND (category = 'Desserts'::text))
+        Index Searches: 1
+        Buffers: shared hit=19
+Planning:
+  Buffers: shared hit=141
+Planning Time: 0.712 ms
+Execution Time: 0.547 ms

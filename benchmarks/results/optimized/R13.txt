@@ -1,0 +1,69 @@
+=== R13 run 1 ===
+Hash Right Anti Join  (cost=38.34..137.56 rows=63 width=27) (actual time=0.440..0.455 rows=129.00 loops=1)
+  Hash Cond: (o.partner_id = p.partner_id)
+  Buffers: shared hit=57
+  ->  Index Scan using idx_orders_placed_at_desc on orders o  (cost=0.42..80.36 rows=1711 width=4) (actual time=0.011..0.190 rows=1648.00 loops=1)
+        Index Cond: (placed_at >= '2026-06-25 00:00:00+05:30'::timestamp with time zone)
+        Index Searches: 1
+        Buffers: shared hit=32
+  ->  Hash  (cost=34.40..34.40 rows=282 width=27) (actual time=0.118..0.118 rows=285.00 loops=1)
+        Buckets: 1024  Batches: 1  Memory Usage: 25kB
+        Buffers: shared hit=25
+        ->  Bitmap Heap Scan on delivery_partners p  (cost=7.17..34.40 rows=282 width=27) (actual time=0.024..0.083 rows=285.00 loops=1)
+              Recheck Cond: ((city_id = 1) AND (status = 'ACTIVE'::text))
+              Heap Blocks: exact=23
+              Buffers: shared hit=25
+              ->  Bitmap Index Scan on idx_delivery_partners_city_active  (cost=0.00..7.10 rows=282 width=0) (actual time=0.014..0.014 rows=285.00 loops=1)
+                    Index Cond: ((city_id = 1) AND (status = 'ACTIVE'::text))
+                    Index Searches: 1
+                    Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=506
+Planning Time: 0.927 ms
+Execution Time: 0.502 ms
+=== R13 run 2 ===
+Hash Right Anti Join  (cost=38.34..137.56 rows=63 width=27) (actual time=0.469..0.486 rows=129.00 loops=1)
+  Hash Cond: (o.partner_id = p.partner_id)
+  Buffers: shared hit=57
+  ->  Index Scan using idx_orders_placed_at_desc on orders o  (cost=0.42..80.36 rows=1711 width=4) (actual time=0.011..0.202 rows=1648.00 loops=1)
+        Index Cond: (placed_at >= '2026-06-25 00:00:00+05:30'::timestamp with time zone)
+        Index Searches: 1
+        Buffers: shared hit=32
+  ->  Hash  (cost=34.40..34.40 rows=282 width=27) (actual time=0.122..0.122 rows=285.00 loops=1)
+        Buckets: 1024  Batches: 1  Memory Usage: 25kB
+        Buffers: shared hit=25
+        ->  Bitmap Heap Scan on delivery_partners p  (cost=7.17..34.40 rows=282 width=27) (actual time=0.025..0.082 rows=285.00 loops=1)
+              Recheck Cond: ((city_id = 1) AND (status = 'ACTIVE'::text))
+              Heap Blocks: exact=23
+              Buffers: shared hit=25
+              ->  Bitmap Index Scan on idx_delivery_partners_city_active  (cost=0.00..7.10 rows=282 width=0) (actual time=0.015..0.015 rows=285.00 loops=1)
+                    Index Cond: ((city_id = 1) AND (status = 'ACTIVE'::text))
+                    Index Searches: 1
+                    Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=500
+Planning Time: 0.793 ms
+Execution Time: 0.534 ms
+=== R13 run 3 ===
+Hash Right Anti Join  (cost=38.34..137.56 rows=63 width=27) (actual time=0.191..0.197 rows=129.00 loops=1)
+  Hash Cond: (o.partner_id = p.partner_id)
+  Buffers: shared hit=57
+  ->  Index Scan using idx_orders_placed_at_desc on orders o  (cost=0.42..80.36 rows=1711 width=4) (actual time=0.005..0.083 rows=1648.00 loops=1)
+        Index Cond: (placed_at >= '2026-06-25 00:00:00+05:30'::timestamp with time zone)
+        Index Searches: 1
+        Buffers: shared hit=32
+  ->  Hash  (cost=34.40..34.40 rows=282 width=27) (actual time=0.054..0.054 rows=285.00 loops=1)
+        Buckets: 1024  Batches: 1  Memory Usage: 25kB
+        Buffers: shared hit=25
+        ->  Bitmap Heap Scan on delivery_partners p  (cost=7.17..34.40 rows=282 width=27) (actual time=0.011..0.039 rows=285.00 loops=1)
+              Recheck Cond: ((city_id = 1) AND (status = 'ACTIVE'::text))
+              Heap Blocks: exact=23
+              Buffers: shared hit=25
+              ->  Bitmap Index Scan on idx_delivery_partners_city_active  (cost=0.00..7.10 rows=282 width=0) (actual time=0.007..0.007 rows=285.00 loops=1)
+                    Index Cond: ((city_id = 1) AND (status = 'ACTIVE'::text))
+                    Index Searches: 1
+                    Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=500
+Planning Time: 0.623 ms
+Execution Time: 0.226 ms
